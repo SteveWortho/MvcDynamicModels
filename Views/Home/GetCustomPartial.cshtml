@@ -1,0 +1,39 @@
+﻿@using DynamicModel.Models
+@model dynamic
+  
+
+<form action="/Home/SubmitPartial" method="Post">
+  
+@if (Model.CurrentModel == CustomModels.CompanyModel)
+{
+    var companyModel = ((CompanyModel) Model);
+
+    
+    <div>
+        <input type="text" class="form-control" id="CompanyName" name="CompanyName" value="@companyModel.CompanyName"/><br />
+        <input type="text" class="form-control" id="CreatedBy" name="CreatedBy" value="@companyModel.CreatedBy"/><br />
+        <input type="text" class="form-control" id="CreatedDate" name="CreatedDate" value="@companyModel.CreatedDate"/><br />
+        <input type="text" class="form-control" id="CurrentModel" name="CurrentModel" value="@CustomModels.CompanyModel"/>
+    </div>
+}
+ 
+@if (Model.CurrentModel == CustomModels.UserModel)
+{
+    var userModel = ((UserModel) Model);
+    <div>
+        <input type="text" class="form-control" id="Firstname" name="Firstname" value="@userModel.Firstname" /><br />
+        <input type="text" class="form-control" id="CreatedBy" name="CreatedBy" value="@userModel.CreatedBy" /><br />
+        <input type="text" class="form-control" id="CreatedDate" name="CreatedDate" value="@userModel.CreatedDate" /><br />
+        <input type="text" class="form-control" id="CurrentModel" name="CurrentModel" value="@CustomModels.UserModel" />
+    </div>
+}
+ 
+    <br/>
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Post</button>
+    </div>
+    
+    
+</form>
+
+

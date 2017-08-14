@@ -1,0 +1,19 @@
+﻿@using DynamicModel.Models
+@{
+    ViewBag.Title = "Samples";
+}
+
+
+<div>
+    <h2>Company Partial</h2>
+    @{Html.RenderAction("GetCustomPartial", new { model  = CustomModels.CompanyModel});}
+</div>
+
+<br/>
+
+<hr/>
+<br />
+<div>
+    <h2>User Partial</h2>
+ @{Html.RenderAction("GetCustomPartial", new { model = CustomModels.UserModel });}
+</div>
